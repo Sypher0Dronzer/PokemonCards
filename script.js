@@ -33,8 +33,13 @@ let barColor = document.querySelectorAll('.inner-bar')
 let highlightedText = document.querySelectorAll('.highlighted-text');
 let pkmonTheme= document.querySelector(':root')
 let hp= document.querySelector('.hp')
-let type2= document.querySelector('.type2')
-
+let abilities= document.querySelector('.abilities')
+// let type2= document.querySelector('.type2')
+let type2 = document.getElementById("unique2");
+// console.log(type2.style);
+// type2.style.backgroundColor="blue";
+console.log("hellp \n world");
+let abilityBox= document.querySelector('.abilities-box')
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -47,24 +52,35 @@ async function pokemonData(pkmon) {
     let data = await response.json();
 
     let typeHTML=``;
+    let abilityHTML=``;
     name.innerHTML=capitalizeFirstLetter(data.name)
-    id.innerHTML=`#${data.id}`
+    id.innerHTML=`#${data.id.toString().padStart(3, '0')}`
     height.innerHTML= `${Number(data.height)/10} m`
     weight.innerHTML= `${Number(data.weight)/10} kg`
     sprite.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`
     // changing the card theme
     let typeColor=typeColors[data.types[0].type.name];
+    let type2Color=typeColors[data.types[1].type.name];
+
     pkmonTheme.style.setProperty('--Pokemon-Type-Theme', `${typeColor}`);
+    pkmonTheme.style.setProperty('--Pokemon-Type-Type-2-Theme', `${type2Color}`);
 
     data.stats.forEach(obj=>{
         console.log(obj.stat.name)
     })
-
     data.types.forEach((e,index) => {
         let typeName=e.type.name
-        typeHTML+=`<div class="type${index+1}" >${capitalizeFirstLetter(typeName)}</div>`
+        typeHTML+=`<div class="type${index+1}" id="unique${index+1}" >${capitalizeFirstLetter(typeName)}</div>`
     });
     typeBox.innerHTML=typeHTML;
+    console.log(typeof(typeColors[data.types[1].type.name]));
+
+    data.abilities.forEach((e)=>{
+ //---------------------------------------------------------     
+      abilityHTML+=`<h4 class="abilities">${e.ability.name}</h4>`
+
+    })
+    abilityBox.innerHTML=abilityHTML;
 
     
   }
@@ -82,6 +98,7 @@ async function pokemonData(pkmon) {
   })
   function search(){
     let searchName=document.querySelector('.searchPokemon').value
+    searchName= searchName.toLowerCase()
     pokemonData(searchName)
 
   }
