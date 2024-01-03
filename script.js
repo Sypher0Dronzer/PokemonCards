@@ -77,7 +77,7 @@ async function pokemonData(pkmon) {
 
     data.abilities.forEach((e)=>{
  //---------------------------------------------------------     
-      abilityHTML+=`<h4 class="abilities">${e.ability.name}</h4>`
+      abilityHTML+=`<h4 class="abilities">${capitalizeFirstLetter(e.ability.name)}</h4>`
 
     })
     abilityBox.innerHTML=abilityHTML;
