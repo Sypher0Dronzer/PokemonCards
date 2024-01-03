@@ -17,6 +17,18 @@
   margin: 15px 0;
   display: flex;
 }
+#searchbar input{
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+#searchbar button{
+  background: var(--Pokemon-Type-Theme);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 2px 10px;
+  color: white;
+  font-weight: 600;
+}
 
 body {
   background: black;

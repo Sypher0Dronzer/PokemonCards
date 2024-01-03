@@ -69,3 +69,19 @@ async function pokemonData(pkmon) {
     
   }
   pokemonData("blaziken")
+
+
+  let getPokemon = document.getElementById('getPokemon');
+  getPokemon.addEventListener('click',()=>{
+    search()
+  })
+  window.addEventListener('keydown',(e)=>{
+    if(e.key =="Enter"){
+        search()
+    }
+  })
+  function search(){
+    let searchName=document.querySelector('.searchPokemon').value
+    pokemonData(searchName)
+
+  }
