@@ -60,10 +60,12 @@ async function pokemonData(pkmon) {
     sprite.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`
     // changing the card theme
     let typeColor=typeColors[data.types[0].type.name];
-    let type2Color=typeColors[data.types[1].type.name];
-
     pkmonTheme.style.setProperty('--Pokemon-Type-Theme', `${typeColor}`);
-    pkmonTheme.style.setProperty('--Pokemon-Type-Type-2-Theme', `${type2Color}`);
+    if(data.types.length>1){
+      let type2Color=typeColors[data.types[1].type.name];
+      pkmonTheme.style.setProperty('--Pokemon-Type-Type-2-Theme', `${type2Color}`);
+    }
+
 
     data.stats.forEach(obj=>{
         console.log(obj.stat.name)
