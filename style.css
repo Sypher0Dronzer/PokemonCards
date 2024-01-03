@@ -17,8 +17,8 @@
   margin: 15px 0;
   display: flex;
   width: 360px;
-
 }
+
 #searchbar input{
   border: none;
   border-radius: 4px 0 0 4px;
@@ -73,7 +73,7 @@ body {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px; /* 133.333% */
+  line-height: 32px;
   background: transparent;
   background: var(--Pokemon-Type-Theme, #74cb48);
   width: 80%;
@@ -151,7 +151,6 @@ body {
   border-radius: 10px;
   background: var(--Pokemon-Type-Theme, #74cb48);
   color: var(--Grayscale-White, #fff);
-
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
@@ -205,8 +204,6 @@ body {
 .grid-stats h1 {
   color: var(--Pokemon-Type-Theme, #74cb48);
   text-align: right;
-
-  /* Header/Subtitle 3 */
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -216,8 +213,6 @@ body {
 }
 .grid-stats h3 {
   color: var(--Grayscale-Dark, #1d1d1d);
-
-  /* Body/Body 3 */
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
