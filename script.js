@@ -98,7 +98,10 @@ async function pokemonData(pkmon) {
   })
 }
 
-pokemonData(Math.floor(Math.random() * 1025));
+document.querySelector('.random').addEventListener('click', ()=>{
+  pokemonData(Math.floor(Math.random() * 1025));
+
+})
 
 let getPokemon = document.getElementById("getPokemon");
 getPokemon.addEventListener("click", () => {

@@ -233,3 +233,20 @@ body {
   opacity: 0.7;
 }
 
+.random{
+  background:  var(--Pokemon-Type-Theme);
+  color: White;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out ;
+}
+.random:hover{
+  letter-spacing: 2px;
+
+}
