@@ -16,11 +16,14 @@
 #searchbar{
   margin: 15px 0;
   display: flex;
+  width: 360px;
+
 }
 #searchbar input{
   border: none;
   border-radius: 4px 0 0 4px;
-  padding: 2px 4px;
+  padding: 12px 8px;
+  width: 90%;
 }
 #searchbar input:focus{
   outline: none;
@@ -29,7 +32,7 @@
   background: var(--Pokemon-Type-Theme);
   border: none;
   border-radius: 0 4px 4px 0;
-  padding: 2px 10px;
+  padding: 5px 10px;
   color: white;
   font-weight: 600;
 }
@@ -40,20 +43,20 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 20px 0;
 }
 #card {
   display: flex;
   border-radius: 8px;
   width: 360px;
-  height: 640px;
+  min-height: 640px;
   padding: 15px 6px 6px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background: var(--Pokemon-Type-Theme, #74cb48);
   position: relative;
-  /* background:#dfb624 !important; */
 }
 
   
@@ -86,7 +89,7 @@ body {
 }
 .whiteLayer {
   display: flex;
-  height: 66.375%;
+  height: 68.375%;
   padding: 56px 20px 20px 20px;
   flex-direction: column;
   align-items: flex-start;
@@ -112,7 +115,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 12%;
+  top: 10%;
 }
 .pokeball {
   position: absolute;
@@ -134,8 +137,6 @@ body {
   border-radius: 10px;
   background: var(--Pokemon-Type-Type-2-Theme, #a43e9e);
   color: var(--Grayscale-White, #fff);
-
-  /* Header/Subtitle 3 */
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
@@ -163,7 +164,7 @@ body {
   width: 100%;
 
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 16px; 
