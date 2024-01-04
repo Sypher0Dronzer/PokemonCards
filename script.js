@@ -111,10 +111,15 @@ document.querySelector('.random').addEventListener('click', ()=>{
 let getPokemon = document.getElementById("getPokemon");
 getPokemon.addEventListener("click", () => {
   search();
+  document.querySelector(".searchPokemon").value="";
+
+
 });
 window.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
     search();
+    document.querySelector(".searchPokemon").value="";
+
   }
 });
 function search() {
