@@ -42,6 +42,7 @@ let hp = document.querySelector(".hp");
 let abilities = document.querySelector(".abilities");
 let type2 = document.getElementById("unique2");
 let abilityBox = document.querySelector(".abilities-box");
+pokemonData(1)
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -50,6 +51,10 @@ function capitalizeFirstLetter(string) {
 async function pokemonData(pkmon) {
   let url = `https://pokeapi.co/api/v2/pokemon/${pkmon}`;
   let response = await fetch(url);
+  console.log(response);
+  if(response.status ==404){
+    alert("The Pokemon name or id doesn't exist")
+  }
   let data = await response.json();
 
   let typeHTML = ``;
@@ -116,4 +121,19 @@ function search() {
   let searchName = document.querySelector(".searchPokemon").value;
   searchName = searchName.toLowerCase();
   pokemonData(searchName);
+}
+
+
+document.getElementById('left').addEventListener('click',()=>{
+  next(-1)
+})
+document.getElementById('right').addEventListener('click',()=>{
+  next(1)
+})
+function next(a){
+  let idNumber= Number(id.innerHTML.substring(1));
+  if((idNumber==1 && a>0) || idNumber!=1){
+    idNumber+=a;
+    pokemonData(idNumber)
+  }
 }
